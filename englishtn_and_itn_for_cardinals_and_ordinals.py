@@ -10,50 +10,6 @@ Original file is located at
 # Commented out IPython magic to ensure Python compatibility.
 ### WARNING: This notebook will not work in a Colab environment. 
 
-BRANCH= 'main'
-
-!git clone -b $BRANCH https://github.com/NVIDIA/NeMo
-# %cd NeMo
-!./reinstall.sh
-
-import pynini
-import nemo_text_processing
-
-from pynini.lib import pynutil
-
-from nemo_text_processing.text_normalization.en.graph_utils import GraphFst, NEMO_DIGIT, delete_space, NEMO_SIGMA, NEMO_NOT_QUOTE, delete_extra_space, NEMO_NON_BREAKING_SPACE
-from nemo_text_processing.text_normalization.normalize import Normalizer
-
-from nemo_text_processing.inverse_text_normalization.fr.taggers.cardinal import CardinalFst
-from nemo_text_processing.inverse_text_normalization.fr.taggers.decimal import DecimalFst
-from nemo_text_processing.inverse_text_normalization.fr.taggers.money import MoneyFst
-from nemo_text_processing.inverse_text_normalization.fr.taggers.ordinal import OrdinalFst
-from nemo_text_processing.inverse_text_normalization.fr.taggers.punctuation import PunctuationFst
-from nemo_text_processing.inverse_text_normalization.fr.taggers.time import TimeFst
-from nemo_text_processing.inverse_text_normalization.fr.taggers.whitelist import WhiteListFst
-from nemo_text_processing.inverse_text_normalization.fr.taggers.word import WordFst
-from nemo_text_processing.inverse_text_normalization.fr.verbalizers.cardinal import CardinalFst
-from nemo_text_processing.inverse_text_normalization.fr.verbalizers.decimal import DecimalFst
-from nemo_text_processing.inverse_text_normalization.fr.verbalizers.money import MoneyFst
-from nemo_text_processing.inverse_text_normalization.fr.verbalizers.ordinal import OrdinalFst
-from nemo_text_processing.inverse_text_normalization.fr.verbalizers.time import TimeFst
-from nemo_text_processing.inverse_text_normalization.fr.verbalizers.whitelist import WhiteListFst
-from nemo_text_processing.inverse_text_normalization.fr.verbalizers.word import WordFst
-
-LANGUAGE= "MY_LANGUAGE" # Change this to your desired language
-
-# Commented out IPython magic to ensure Python compatibility.
-# %cd nemo_text_processing/inverse_text_normalization/
-!mkdir {LANGUAGE}
-!mkdir "{LANGUAGE}/taggers"
-!mkdir "{LANGUAGE}/verbalizers"
-!mkdir "{LANGUAGE}/data"
-# %cd {LANGUAGE}
-!pwd && ls
-
-!cp ../../text_normalization/en/graph_utils.py .
-!cp ../../text_normalization/en/utils.py .
-! cd ../../..
 
 from pynini.lib import pynutil
 
